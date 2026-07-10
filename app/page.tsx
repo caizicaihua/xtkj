@@ -72,44 +72,12 @@ export default function Home() {
   return (
     <main>
       <section className="hero" id="top">
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="signal signal-one" aria-hidden="true" />
-        <div className="signal signal-two" aria-hidden="true" />
-        <div className="hero-dashboard" aria-hidden="true">
-          <div className="dashboard-topline">
-            <span>LIVE CAMPAIGN VIEW</span>
-            <span className="dashboard-status">ACTIVE</span>
-          </div>
-          <div className="dashboard-columns">
-            <div className="dashboard-panel panel-chart">
-              <span className="mini-label">CREATIVE TESTING</span>
-              <div className="chart-bars">
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-              </div>
-              <div className="chart-line" />
-            </div>
-            <div className="dashboard-panel panel-game">
-              <span className="mini-label">GAMEPLAY HOOK</span>
-              <div className="game-stage">
-                <div className="game-path" />
-                <span className="game-unit unit-a" />
-                <span className="game-unit unit-b" />
-                <span className="game-unit unit-c" />
-              </div>
-            </div>
-            <div className="dashboard-panel panel-score">
-              <span className="mini-label">MARKET SIGNAL</span>
-              <strong>READY</strong>
-              <span>Plan / Test / Learn</span>
-            </div>
-          </div>
+        <div className="hero-media" aria-hidden="true">
+          <img src="/petal-panic-drift-promo.png" alt="" />
+          <img src="/prism-cascade-promo.png" alt="" />
+          <img src="/pipe-dasher-promo.png" alt="" />
         </div>
+        <div className="hero-shade" aria-hidden="true" />
 
         <header className="site-header">
           <a className="brand" href="#top" aria-label="XingTuiKeJi home">
@@ -127,19 +95,24 @@ export default function Home() {
 
         <div className="hero-content">
           <p className="eyebrow">PERFORMANCE MARKETING FOR GAMES</p>
-          <h1>Build player growth with a sharper signal.</h1>
+          <h1>Make every game signal count.</h1>
           <p className="hero-copy">
-            XingTuiKeJi supports game teams with campaign planning, creative testing,
-            and performance optimization for global growth.
+            XingTuiKeJi helps game teams turn campaigns, creative, and player insight
+            into a clearer path to sustainable growth.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#contact">Start a conversation</a>
-            <a className="text-link" href="#services">Explore our services <span aria-hidden="true">→</span></a>
+            <a className="text-link" href="#games">Explore live titles <span aria-hidden="true">→</span></a>
+          </div>
+          <div className="hero-proof" aria-label="XingTuiKeJi focus areas">
+            <span>Campaign strategy</span>
+            <span>Creative testing</span>
+            <span>Performance learning</span>
           </div>
         </div>
         <div className="hero-footer">
-          <span>Independent growth partner</span>
-          <span>China-based, globally minded</span>
+          <span>Independent game growth studio</span>
+          <span>China-based / global perspective</span>
         </div>
       </section>
 
