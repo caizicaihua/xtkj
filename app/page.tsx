@@ -35,6 +35,39 @@ const principles = [
   ["Operate transparently", "Clear reporting, shared context, and accountable campaign decisions."],
 ];
 
+const featuredGames = [
+  {
+    title: "Petal Panic Drift",
+    detail:
+      "A floral match-3 puzzle game with collectible blooms, limited moves, and obstacle-clearing level goals.",
+    href: "https://play.google.com/store/apps/details?id=com.HK7377Game.PetalPanicDrift",
+    theme: "petal-panic",
+    short: "PP",
+    image: "/petal-panic-drift.png",
+    promo: "/petal-panic-drift-promo.png",
+  },
+  {
+    title: "Prism Cascade",
+    detail:
+      "Swap adjacent gems to form lines of three or more, clear objectives, and unlock new content and rewards.",
+    href: "https://play.google.com/store/apps/details?id=com.silvestrepa.prismcascade",
+    theme: "prism-cascade",
+    short: "PC",
+    image: "/prism-cascade.png",
+    promo: "/prism-cascade-promo.png",
+  },
+  {
+    title: "Pipe Dasher",
+    detail:
+      "A 360-degree 3D ring-track runner controlled by tilting your device to navigate left and right.",
+    href: "https://play.google.com/store/apps/details?id=com.silvestrepa.pipedasher",
+    theme: "pipe-dasher",
+    short: "PD",
+    image: "/pipe-dasher.png",
+    promo: "/pipe-dasher-promo.png",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -85,6 +118,7 @@ export default function Home() {
           </a>
           <nav aria-label="Primary navigation">
             <a href="#services">Services</a>
+            <a href="#games">Games</a>
             <a href="#approach">Approach</a>
             <a href="#privacy">Privacy</a>
           </nav>
@@ -132,6 +166,43 @@ export default function Home() {
               <span className="service-number">{service.number}</span>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="featured-games section" id="games">
+        <div className="section-heading games-heading">
+          <div>
+            <div className="section-kicker">FEATURED GAMES</div>
+            <h2>Games live on Google Play.</h2>
+          </div>
+          <p>Explore three mobile titles in our current portfolio.</p>
+        </div>
+        <div className="games-grid">
+          {featuredGames.map((game) => (
+            <article className="game-card" key={game.title}>
+              <div className={`game-art ${game.theme}${game.image ? " has-image" : ""}${game.promo ? " has-promo" : ""}`} aria-hidden="true">
+                {game.promo && <img className="game-promo" src={game.promo} alt="" />}
+                {game.image ? (
+                  <img className="game-icon" src={game.image} alt="" />
+                ) : (
+                  <>
+                    <span className="game-art-code">{game.short}</span>
+                    <i className="art-piece art-one" />
+                    <i className="art-piece art-two" />
+                    <i className="art-piece art-three" />
+                  </>
+                )}
+              </div>
+              <div className="game-card-copy">
+                <p className="game-meta">AVAILABLE ON GOOGLE PLAY</p>
+                <h3>{game.title}</h3>
+                <p>{game.detail}</p>
+                <a href={game.href} target="_blank" rel="noreferrer">
+                  View on Google Play <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </article>
           ))}
         </div>
@@ -188,7 +259,7 @@ export default function Home() {
               respond to applicable data access or deletion requests.
             </p>
             <p>
-              For privacy questions or requests, contact <a href="mailto:privacy@xingtuikeji.com">privacy@xingtuikeji.com</a>.
+              For privacy questions or requests, contact <a href="mailto:ad@bluyb.xyz">ad@bluyb.xyz</a>.
             </p>
             <p className="privacy-date">Last updated: July 10, 2026</p>
           </div>
@@ -198,7 +269,7 @@ export default function Home() {
       <section className="contact section" id="contact">
         <div className="contact-topline">XINGTUIKEJI / GAME GROWTH</div>
         <h2>Let&apos;s make the next campaign more useful.</h2>
-        <a className="contact-email" href="mailto:contact@xingtuikeji.com">contact@xingtuikeji.com</a>
+        <a className="contact-email" href="mailto:ad@bluyb.xyz">ad@bluyb.xyz</a>
         <div className="contact-meta">
           <span>Business location: China</span>
           <span>Available for global collaboration</span>
