@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "XingTuiKeJi | Game Growth, Measured",
   description:
     "XingTuiKeJi helps game teams plan, test, and optimize performance marketing campaigns across global mobile channels.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
   openGraph: {
     title: "XingTuiKeJi | Game Growth, Measured",
     description:
