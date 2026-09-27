@@ -1,44 +1,41 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
+import SiteHeader from "./site-header";
+import SiteFooter from "./site-footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "XingTuiKeJi | Game Growth, Measured",
+  title: "HengQingKeJi | Good Games. Great Connections.",
   description:
-    "XingTuiKeJi helps game teams plan, test, and optimize performance marketing campaigns across global mobile channels.",
+    "HengQingKeJi helps game teams plan, test, and optimize performance marketing campaigns across global mobile channels.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
   openGraph: {
-    title: "XingTuiKeJi | Game Growth, Measured",
+    title: "HengQingKeJi | Good Games. Great Connections.",
     description:
-      "Campaign planning, creative testing, and performance optimization for game growth.",
+      "Discover our games and a thoughtful approach to connecting them with players around the world.",
     type: "website",
     images: [
       {
         url: "/og.png",
-        width: 1728,
+        width: 1730,
         height: 909,
-        alt: "XingTuiKeJi - Game Growth, Measured",
+        alt: "HengQingKeJi - Good Games. Great Connections.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "XingTuiKeJi | Game Growth, Measured",
+    title: "HengQingKeJi | Good Games. Great Connections.",
     description:
-      "Campaign planning, creative testing, and performance optimization for game growth.",
+      "Discover our games and a thoughtful approach to connecting them with players around the world.",
     images: ["/og.png"],
   },
 };
@@ -50,8 +47,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={geistSans.variable}>
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
