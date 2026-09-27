@@ -10,22 +10,23 @@ export default function SiteFooter() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link className="brand" href="/" aria-label={`${company.name} home`}><BrandMark /><span>{company.name}</span></Link>
-            <p>A little play. A wider world.<br />Helping great games find their people.</p>
+            <p>TikTok advertising services.<br />Campaign planning, delivery, and optimization.</p>
+            <p>Website operated by<br /><strong lang="zh-CN">{company.legalName}</strong><br />under the {company.name} brand.</p>
           </div>
           <nav className="footer-links" aria-label="Footer navigation">
             <h2>Explore</h2>
-            <Link href="/#games">Our games</Link>
-            <Link href="/#services">What we do</Link>
-            <Link href="/#about">About us</Link>
+            <Link href="/#services">TikTok ad services</Link>
+            <Link href="/#about">Our company</Link>
+            <Link href="/#games">Game showcase</Link>
           </nav>
           <div className="footer-contact">
             <h2>Stay in touch</h2>
             <a href={company.mailto}>{company.email}<Icon name="external" /></a>
-            <p>Based in China.<br />Open to global collaboration.</p>
+            <p>Company website<br /><a href={company.website}>{company.websiteLabel}</a></p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2026 {company.name}. All rights reserved.</p>
+          <p>© 2026 <span lang="zh-CN">{company.legalName}</span> · {company.name}. All rights reserved.</p>
           <Link href="/privacy">Privacy policy</Link>
         </div>
       </div>

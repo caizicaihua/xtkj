@@ -7,9 +7,9 @@ import Icon from "./ui-icon";
 import { company } from "./site-content";
 
 const navigation = [
-  { href: "/#games", label: "Our games" },
-  { href: "/#services", label: "What we do" },
-  { href: "/#about", label: "About us" },
+  { href: "/#services", label: "TikTok ad services" },
+  { href: "/#about", label: "Our company" },
+  { href: "/#games", label: "Game showcase" },
 ];
 
 export default function SiteHeader() {
@@ -39,7 +39,7 @@ export default function SiteHeader() {
     <header className="site-header" ref={header}>
       <div className="container header-inner">
         <Link className="brand" href="/" aria-label={`${company.name} home`} onClick={() => setMenuOpen(false)}>
-          <BrandMark /><span>{company.name}</span>
+          <BrandMark /><span className="brand-text"><span>{company.name}</span><span className="brand-legal-name" lang="zh-CN">{company.legalName}</span></span>
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navigation.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}

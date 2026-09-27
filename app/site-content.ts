@@ -1,7 +1,17 @@
 export const company = {
   name: "HengQingKeJi",
+  legalName: "长沙清恒科技有限公司",
+  website: "https://www.kbmpy.xyz",
+  websiteLabel: "www.kbmpy.xyz",
+  domain: "kbmpy.xyz",
   email: "tiktok@kbmpy.xyz",
   mailto: "mailto:tiktok@kbmpy.xyz",
+  primaryMarkets: ["Brazil", "Bangladesh", "Pakistan"],
+};
+
+export const siteMetadata = {
+  title: `${company.name} | TikTok Advertising Services`,
+  description: `${company.legalName}, operating under the ${company.name} brand, provides TikTok advertising services, campaign management, creative testing, optimization, and performance reporting. Contact ${company.email}.`,
 };
 
 export const games = [

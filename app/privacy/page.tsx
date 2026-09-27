@@ -5,7 +5,8 @@ import { company } from "../site-content";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | HengQingKeJi",
-  description: "Learn how HengQingKeJi handles business contact details and campaign-related data, and how to contact us about privacy.",
+  description: `Privacy information for ${company.legalName}, the operator of ${company.websiteLabel} under the ${company.name} brand, and contact details for enquiries about TikTok advertising services.`,
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -20,8 +21,13 @@ export default function PrivacyPage() {
         </div>
         <article className="legal-content">
           <section>
+            <h2>Who operates this website</h2>
+            <p><span lang="zh-CN">{company.legalName}</span> operates <a href={company.website}>{company.websiteLabel}</a> under the {company.name} brand. Our primary business is providing TikTok advertising services, including campaign management, creative testing, optimization, and performance reporting.</p>
+            <p>Our company contact email is <a href={company.mailto}>{company.email}</a>. The website and email both use our {company.domain} domain.</p>
+          </section>
+          <section>
             <h2>How we use information</h2>
-            <p>{company.name} processes business contact details and campaign-related data only where needed to provide requested services, operate campaigns, and communicate with our clients. We do not sell personal information.</p>
+            <p><span lang="zh-CN">{company.legalName}</span> processes business contact details and campaign-related data only where needed to provide requested TikTok advertising services, operate campaigns, and communicate with our clients. We do not sell personal information.</p>
           </section>
           <section>
             <h2>Protection and retention</h2>
