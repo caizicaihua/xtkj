@@ -18,6 +18,43 @@ npm run build
 
 This starter does not use `wrangler.jsonc`.
 
+## HengQingKeJi on Cloudflare Pages
+
+The `hqkj` branch exports the portal as a static website. Use these Pages build
+settings:
+
+| Setting | Value |
+| --- | --- |
+| Production branch | `hqkj` |
+| Framework preset | None |
+| Build command | `npm run build` |
+| Build output directory | `dist/client` |
+| Root directory | Repository root (leave blank) |
+| Environment variable | `NODE_VERSION=22` |
+
+`next.config.ts` enables `output: "export"` and disables server-side image
+optimization. The build generates `index.html`, `privacy.html`, `404.html`, and
+the RSC files used for client navigation inside `dist/client`. A final check
+fails the build if these files are missing or empty. No Worker or database
+binding is required to serve this portal on Pages.
+
+`public/_redirects` maps the home navigation request `/.rsc` to the exported
+`/index.rsc` file. Keep this Pages rewrite while using vinext 0.0.50 so navigation
+back from the privacy page and link prefetches do not request a missing file.
+
+If the Pages root URL returns 404, check the deployed commit and confirm the
+build log includes `Pre-rendering all routes` and `Pages output verified`.
+The original `4841d82` build only produced server bundles and browser assets;
+publishing its `dist/client` directory does not provide an HTML homepage.
+Deploy a commit with this static export configuration instead of retrying that
+old commit. Pages automatically rebuilds on new pushes to `hqkj`.
+
+The original site uses the separate `xtkj` Worker connected to `main`. Keep
+non-production branch builds disabled on that Worker so `hqkj` pushes only
+publish this Pages project. A non-production version command of
+`npx wrangler deploy` would also promote the `hqkj` build to the original
+Worker's production domain even though the Git `main` branch is unchanged.
+
 ## Included Shape
 
 - edit site code under `app/`
