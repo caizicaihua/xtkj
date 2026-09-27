@@ -42,6 +42,14 @@ binding is required to serve this portal on Pages.
 `/index.rsc` file. Keep this Pages rewrite while using vinext 0.0.50 so navigation
 back from the privacy page and link prefetches do not request a missing file.
 
+`public/_headers` adds `Cache-Control: no-transform` to the homepage and privacy
+page while preserving their normal revalidation policy. This keeps the public
+company email and its `mailto:` links readable in the HTML without relying on
+Cloudflare's email decoding script. This matters when reviewers fetch the site
+without running JavaScript. Cloudflare documents this behavior in its
+[email obfuscation documentation](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/).
+The same file preserves immutable caching for content-hashed assets.
+
 If the Pages root URL returns 404, check the deployed commit and confirm the
 build log includes `Pre-rendering all routes` and `Pages output verified`.
 The original `4841d82` build only produced server bundles and browser assets;

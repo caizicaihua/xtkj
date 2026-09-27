@@ -2,7 +2,7 @@ import { stat } from "node:fs/promises";
 
 // Pages serves only this directory; server bundles cannot render missing pages.
 const output = new URL("../dist/client/", import.meta.url);
-const requiredFiles = ["index.html", "privacy.html", "404.html", "index.rsc", "privacy.rsc", "_redirects"];
+const requiredFiles = ["index.html", "privacy.html", "404.html", "index.rsc", "privacy.rsc", "_redirects", "_headers"];
 
 for (const file of requiredFiles) {
   const info = await stat(new URL(file, output)).catch(() => null);
